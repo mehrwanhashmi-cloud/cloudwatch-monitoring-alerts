@@ -2,14 +2,15 @@
 Implemented real-time monitoring and alerting for an EC2-based application using AWS CloudWatch and SNS.
 
 ## 🚀 Features
-* Configured CPU utilization alarms for performance monitoring
-* Implemented EC2 health monitoring using StatusCheckFailed
-* Integrated Amazon SNS for real-time email notifications
-* Simulated high CPU load to test alerting system
+* Implemented threshold-based CPU utilization monitoring using CloudWatch
+* Configured EC2 instance health checks using StatusCheckFailed metric
+* Integrated Amazon SNS for automated real-time alert delivery
+* Simulated production-like load to validate monitoring and alerting pipeline
 
-## 🏗️ Architecture
-EC2 → CloudWatch → Alarm → SNS → Email
+### Architecture Flow
+Client → EC2 Instance → CloudWatch Metrics → CloudWatch Alarm → SNS → Email Notification
 <img width="1536" height="1024" alt="cloudwatch_alarms" src="https://github.com/user-attachments/assets/e3e11687-3800-49e2-b030-b8f1abf737cb" />
+This architecture demonstrates a real-time monitoring pipeline where EC2 performance and health metrics are continuously evaluated by CloudWatch alarms and trigger automated notifications via SNS.
 
 ## 📸 Screenshots
 
@@ -33,11 +34,16 @@ EC2 → CloudWatch → Alarm → SNS → Email
 * Amazon SNS
 * Amazon EC2
 
+## 🧪 Testing & Validation
+* Generated high CPU load using stress tool to simulate real-world scenarios
+* Verified alarm state transitions (OK → ALARM)
+* Confirmed end-to-end notification delivery via SNS email alerts
+
 ## 🧠 Key Learnings
-* CloudWatch alarms require sufficient datapoints to evaluate
-* Monitoring resolution (1 min vs 5 min) impacts alert speed
-* SNS enables real-time alerting workflows
-* Sustained load is required for reliable alert triggering
+* CloudWatch alarms depend on sufficient datapoints for accurate evaluation
+* Monitoring resolution (1-minute vs 5-minute) directly impacts alert responsiveness
+* SNS enables decoupled, event-driven notification systems
+* Sustained load is required to reliably trigger monitoring thresholds
 
 ## ✅ Outcome
 Built a complete monitoring and alerting system capable of detecting performance issues and notifying users in real-time.
