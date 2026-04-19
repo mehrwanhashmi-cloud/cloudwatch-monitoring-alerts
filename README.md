@@ -10,7 +10,6 @@ Implemented real-time monitoring and alerting for an EC2-based application using
 ### Architecture Flow
 Client → EC2 Instance → CloudWatch Metrics → CloudWatch Alarm → SNS → Email Notification
 <img width="1536" height="1024" alt="cloudwatch_alarms" src="https://github.com/user-attachments/assets/e3e11687-3800-49e2-b030-b8f1abf737cb" />
-This architecture demonstrates a real-time monitoring pipeline where EC2 performance and health metrics are continuously evaluated by CloudWatch alarms and trigger automated notifications via SNS.
 
 ## 📸 Screenshots
 
